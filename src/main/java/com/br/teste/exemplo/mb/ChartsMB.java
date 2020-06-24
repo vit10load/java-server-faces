@@ -60,7 +60,10 @@ public class ChartsMB implements Serializable {
 
     public void inicializarChartModel() {
         model = new BarChartModel();
-        
+        model.setLegendPosition("ne");
+        model.getAxis(AxisType.Y).setLabel("Venda Total");
+        model.getAxis(AxisType.X).setLabel("Mês");
+        model.setTitle("Total de Vendas por Mês");
     }
 
     public void inicializarSeries() {
@@ -80,7 +83,8 @@ public class ChartsMB implements Serializable {
             }     
             
             model.addSeries(series);
-
+ 
+            
         }
     }
 
