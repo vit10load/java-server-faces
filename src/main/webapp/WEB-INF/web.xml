@@ -19,9 +19,9 @@
         <param-value>nova-colored</param-value>
     </context-param>
     
-    <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
-    </session-config>
+    <context-param>
+        <param-name>primefaces.MOVE_SCRIPTS_TO_BOTTOM</param-name>
+        <param-value>true</param-value>
+    </context-param>
+   
 </web-app>

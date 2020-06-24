@@ -5,6 +5,7 @@
  */
 package com.br.teste.exemplo.datamodel;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +16,7 @@ import javax.persistence.Id;
  * @author vitcl
  */
 @Entity
-public class Cliente {
+public class Cliente implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

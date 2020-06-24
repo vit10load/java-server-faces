@@ -19,4 +19,12 @@
                 <goal>tomcat7:redeploy</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-limpar</actionName>
+            <displayName>limpar</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+        </action>
     </actions>
