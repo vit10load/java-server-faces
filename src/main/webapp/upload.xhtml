@@ -5,35 +5,22 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Exemplo gráfico</title>
+        <title>Casos covid - 19</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        <p:panel header="Cadastro de Vendas">
-            <h:form>
+        <p:panel header="Cadastro de novos casos de covid - 19">
+            <h:form enctype="multipart/form-data">
                 <h:panelGrid columns="2" cellpadding="5">
-                    <p:outputLabel for="nome" value="Nome"/>
-                    <p:inputText id="nome" value="#{chartsMB.venda.nomeVendedor}"/>
-                    <p:outputLabel for="mes" value="Mês"/>
-                    <p:selectOneMenu id="mes" value="#{chartsMB.venda.mes}">
-                        <f:selectItem itemValue="jan" itemLabel="Janeiro"></f:selectItem>
-                        <f:selectItem itemValue="fev" itemLabel="Fevereiro"></f:selectItem>
-                        <f:selectItem itemValue="mar" itemLabel="Março"></f:selectItem>
-                        <f:selectItem itemValue="abr" itemLabel="Abril"></f:selectItem>
-                        <f:selectItem itemValue="mai" itemLabel="Maio"></f:selectItem>
-                        <f:selectItem itemValue="jun" itemLabel="Junho"></f:selectItem>
-                    </p:selectOneMenu>
-                    <p:outputLabel for="valor" value="Valor Total"/>
-                    <p:inputNumber id="valor" value="#{chartsMB.venda.valorTotal}"/>
-                    <span></span>
-                    <p:commandButton value="Salvar" action="#{chartsMB.salvar}" ajax="false"></p:commandButton>
+                    <p:fileUpload value="#{casosCovidMB.file}" mode="simple" skinSimple="true"></p:fileUpload>
+                    <p:commandButton value="ENVIAR" action="#{casosCovidMB.upload()}" ajax="false"/>
                 </h:panelGrid>
             </h:form>
         </p:panel>
         <p:spacer/>
-        <p:panel header="Exemplos Gráficos">
+        <p:panel header="Covid">
             <p:panelGrid columns="2" layout="grid">
-                <p:chart type="bar" model="#{chartsMB.model}"/>
+                <p:chart type="bar" model="#{casosCovidMB.model}"/>
             </p:panelGrid>
         </p:panel>
     </h:body>
